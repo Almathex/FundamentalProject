@@ -3,9 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:password1234@34.105.157.94/walls"
-app.config['SECRET_KEY'] = "a-secret"
-
+app.config['DBI_URI'] = getenv('DBI_URI')
+app.config['SECRET_KEY'] = getenv('SECREY_KEY')
 db = SQLAlchemy(app)
 
 from application import routes
