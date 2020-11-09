@@ -15,6 +15,7 @@ class Location(db.Model):
     town = db.Column(db.String(50), nullable=False)
     postcode = db.Column(db.String(10), nullable=False)
     loctaions = db.realationship('Wall', backref = 'location')
+    
 class Activity(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     activity_name =  db.Column(db.String(50), unique=True)
