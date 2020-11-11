@@ -1,6 +1,6 @@
 from flask import render_template, url_for, redirect, request
 from application import app, db
-from application.models import Wall
+from application.models import Wall, Location, Activity
 from application.forms import WallForm, LocationForm, ActivityForm
 
 @app.route('/', methods=['POST', 'GET'])
@@ -8,8 +8,8 @@ def index():
     form = OrderWall()
     totals = {
         "total_walls": Wall.query.count(),
-        "total_locations": Wall.query.filter_by(location_id).count()
-        "total_activites" Wall.query.filter_by(activity_id).count()
+        "total_locations": Location.query.count(),
+        "total_activites": Activity.query.count()
     }
     if form.order_with.data == "id":
         wall = Wall.query.order_by(Wall.id.desc()).all()
