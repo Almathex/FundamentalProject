@@ -2,26 +2,6 @@
 {% block body_content %}
     <br>
     <br>
-    There are {{ totals['total_walls'] }} walls
-    <br>
-    <br>
-    In {{ totals['total_loctaions'] }} loctaions
-    <br>
-    <br>
-    With {{ totals['total_activities'] }} activities
-
-    {% if totals['total_walls'] == 0 %}
-       
-        <h3>Add some walls</h3>
-    
-    {% elif totals['total_walls'] < 10 %}
-
-        <h3>You can get 10 walls </h3>
-    
-    {% elif totals['total_completed'] >= 10 %}
-
-        <h3>That's alot of walls</h3>
-
-    {% endif %}
-
+    Want to find a Wall?
+  
 {% endblock body_content %}
