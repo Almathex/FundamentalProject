@@ -1,7 +1,7 @@
 from flask import render_template, url_for, redirect, request
 from application import app, db
 from application.models import Wall, Location, Activity
-from application.forms import WallForm, OrderWall
+from application.forms import WallForm, OrderWall, LocationForm, ActivityForm
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
