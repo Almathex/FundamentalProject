@@ -13,7 +13,7 @@ class WallForm(FlaskForm):
     )
     submit = SubmitField('Submit')
 
-    def validate_task(self, wall):
+    def validate_wall(self, wall):
         walls = Wall.query.all()
         for index in walls:
             if index.wall == wall.data:
@@ -27,7 +27,7 @@ class LocationForm(FlaskForm):
     )
     submit = SubmitField('Submit')
 
-    def validate_task(self, location):
+    def validate_location(self, location):
         locations = Location.query.all()
         for index in locations:
             if index.location == location.data:
@@ -42,7 +42,7 @@ class ActivityForm(FlaskForm):
     )
     submit = SubmitField('Submit')
 
-    def validate_task(self, activity):
+    def validate_activity(self, activity):
         activities = Activity.query.all()
         for index in activities:
             if index.activity == activity.data:
