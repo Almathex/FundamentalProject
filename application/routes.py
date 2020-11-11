@@ -23,15 +23,15 @@ def index():
 
 @app.route('/add', methods=['POST', 'GET'])
 def add():
-    form = WallForm()
+    form = LocationForm()
     if form.validate_on_submit():
-        wall = Wall(
-            walls = form.wall.data,
+        location = Location(
+            locations = form.location.data,
         )
         db.session.add(todo)
         db.session.commit()
         return redirect(url_for('index'))
-    return render_template('add.html', title="New Wall", form=form)
+    return render_template('add.html', title="New Location", form=form)
 
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
 def update(id):
