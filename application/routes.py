@@ -16,7 +16,7 @@ def add():
             wall = form.wall.data,
             complete = False
         )
-        db.session.add(todo)
+        db.session.add(walls)
         db.session.commit()
         return redirect(url_for('index'))
     return render_template('add.html', title="New Location", form=form)   
