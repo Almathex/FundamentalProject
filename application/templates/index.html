@@ -25,7 +25,7 @@
 
             {{ activity.activity_name }},
             {{ activity.additional_equiptment }}
-            <form action='{{ url_for('update', id=activity.id) }}'>
+            <form action='{{ url_for('updateact', id=activity.id) }}'>
                 <input type=submit value="Edit">
                 </form>
                 <form action='{{ url_for('delete', id=activity.id) }}'>
