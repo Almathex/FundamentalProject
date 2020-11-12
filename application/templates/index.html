@@ -3,5 +3,15 @@
     <br>
     <br>
     Want to find a Wall?
-  
+    <div>
+            <form action='{{ url_for('update', id=todo.id) }}'>
+            <input type=submit value="Change">
+            </form>
+            <form action='{{ url_for('delete', id=todo.id) }}'>
+            <input type=submit value="Delete">
+            </form>
+            <br>
+
+        {% endfor %}
+    <div>
 {% endblock body_content %}
