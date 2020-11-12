@@ -4,19 +4,27 @@
     <br>
     Want to find a Wall?
     <div>
-        <form action="{{ url_for('index') }}" method='POST'>
-            {{ form.order_with }}
-            {{ form.submit }}
-        </form>
         {% for location in locations %}
 
-            {{ location.county }}
-            {{ location.town }}
+            {{ location.county }},
+            {{ location.town }},
             {{ location.postcode }}
             <form action='{{ url_for('update', id=location.id) }}'>
                 <input type=submit value="Edit">
                 </form>
                 <form action='{{ url_for('delete', id=location.id) }}'>
+                <input type=submit value="Remove">
+                </form>
+                <br>
+        {% endfor %}
+        {% for activity in activities %}
+
+            {{ activity.activity_name }},
+            {{ activity.additional_equiptment }}
+            <form action='{{ url_for('update', id=activity.id) }}'>
+                <input type=submit value="Edit">
+                </form>
+                <form action='{{ url_for('delete', id=activity.id) }}'>
                 <input type=submit value="Remove">
                 </form>
                 <br>

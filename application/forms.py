@@ -18,7 +18,7 @@ class LocationForm(FlaskForm):
 
 class ActivityForm(FlaskForm):
     activity_name =  StringField('Activity:', validators = [DataRequired()])
-    Additional_equiptment = IntegerField('Equiptment required?:', validators = [DataRequired()])
+    additional_equiptment = IntegerField('Equiptment required?:', validators = [DataRequired()])
     submit = SubmitField('Submit')
 
     def validate_task(self, task):

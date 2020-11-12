@@ -10,7 +10,7 @@ def index():
         "total_locations": Locations.query.count(),
         "total_activities": Activities.query.count()
     }
-    return render_template('index.html', title="Wall App", form=form, totals=totals, locations=Locations.query.all())
+    return render_template('index.html', title="Wall App", form=form, totals=totals, locations=Locations.query.all(), activities=Activities.query.all())
 
 @app.route('/add/location', methods=['POST', 'GET'])
 def add():
@@ -24,7 +24,20 @@ def add():
         db.session.add(location)
         db.session.commit()
         return redirect(url_for('index'))
-    return render_template('add.html', title="New Location", form=form)    
+    return render_template('add.html', title="New Location", form=form) 
+
+@app.route('/add/activity', methods=['POST', 'GET'])
+def add():
+    form = ActivityForm()
+    if form.validate_on_submit():
+        activity = Activities(
+            activity_name = form.activity_name.data,
+            additional_equiptment = form.additional_equiptment.data
+        )
+        db.session.add(location)
+        db.session.commit()
+        return redirect(url_for('index'))
+    return render_template('addact.html', title="New Activity", form=form)       
 
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
 def update(id):
