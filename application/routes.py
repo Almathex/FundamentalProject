@@ -12,7 +12,7 @@ def index():
     }
     return render_template('index.html', title="Wall App", form=form, totals=totals)
 
-@app.route('/add', methods=['POST', 'GET'])
+@app.route('/add/location', methods=['POST', 'GET'])
 def add():
     form = LocationForm()
     if form.validate_on_submit():
