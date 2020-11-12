@@ -39,8 +39,8 @@ def add1():
         return redirect(url_for('index'))
     return render_template('addact.html', title="New Activity", form=form)       
 
-@app.route('/update/<int:id>', methods=['GET', 'POST'])
-def update(id):
+@app.route('/update/location/<int:id>', methods=['GET', 'POST'])
+def updateloc(id):
     form = LocationForm()
     location = Locations.query.get(id)
     if form.validate_on_submit():
@@ -54,6 +54,20 @@ def update(id):
         form.town.data = location.town
         form.postcode.data = location.postcode
     return render_template('update.html', title='Edit your location', form=form)
+
+@app.route('/update/activity/<int:id>', methods=['GET', 'POST'])
+def updateact(id):
+    form = ActivityForm()
+    activity = Activities.query.get(id)
+    if form.validate_on_submit():
+        activity.activity_name = form.activity_name.data
+        activity.additional_equiptment = form.additional_equiptment.data
+        db.session.commit()
+        redirect(url_for('index'))
+    elif request.method == 'GET':
+        form.activity_name.data = activity.activity_name
+        form.additional_equiptment.data = activity.additional_equiptment
+    return render_template('updateact.html', title='Edit your activity', form=form)    
 
 @app.route('/delete/<int:id>')
 def delete(id):
