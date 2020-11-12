@@ -16,7 +16,7 @@ class LocationForm(FlaskForm):
             if location.postcode == postcode.data:
                 raise ValidationError('This postcode already exists!')
 
-class ActivityTodo(FlaskForm):
+class ActivityForm(FlaskForm):
     activity_name =  StringField('Activity:', validators = [DataRequired()])
     Additional_equiptment = IntegerField('Equiptment required?:', validators = [DataRequired()])
     submit = SubmitField('Submit')
