@@ -34,7 +34,7 @@ def add1():
             activity_name = form.activity_name.data,
             additional_equiptment = form.additional_equiptment.data
         )
-        db.session.add(location)
+        db.session.add(activity)
         db.session.commit()
         return redirect(url_for('index'))
     return render_template('addact.html', title="New Activity", form=form)       

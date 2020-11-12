@@ -9,6 +9,13 @@
                 {{ error }}<br>
             {% endfor %}
         {% endif %}
+        {{ form.hidden_tag() }}
+        {{ form.additional_equiptment }} <br>
+        {% if form.additional_equiptment.errors %}
+            {% for error in form.additional_equiptment.errors %}
+                {{ error }}<br>
+            {% endfor %}
+        {% endif %}
         {{ form.submit }}
     </form>
 {% endblock body_content %}
