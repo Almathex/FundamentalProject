@@ -6,10 +6,13 @@
 </head>
 <body>
     <h1>Wall:</h1>
-    <a href="{{ url_for('index') }}">Home for all your walls</a>
+    <a href="{{ url_for('index') }}">Home for all your walls/locations/activities</a>
     <br>
     <br>
-    <a href="{{ url_for('add') }}">Add a new wall</a>
+    <a href="{{ url_for('addloc') }}">Add a new location</a>
+    <br>
+    <a href="{{ url_for('addact') }}">Add a new activity</a>
+    <br>
     {% block body_content %}
     {% endblock body_content %}
 </body>
