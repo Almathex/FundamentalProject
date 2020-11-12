@@ -4,10 +4,10 @@
     <br>
     Want to find a Wall?
     <div>
-            <form action='{{ url_for('update', id=wall.id) }}'>
+            <form action='{{ url_for('update', id=Wall.id) }}'>
             <input type=submit value="Change">
             </form>
-            <form action='{{ url_for('delete', id=wall.id) }}'>
+            <form action='{{ url_for('delete', id=Wall.id) }}'>
             <input type=submit value="Delete">
             </form>
             <br>
