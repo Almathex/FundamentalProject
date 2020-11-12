@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 {% block body_content %}
     County
-    <form action='' method='POST' title='County'>
+    <form action='' method='POST' >
         {{ form.hidden_tag() }}
         {{ form.county }} <br>
         {% if form.county.errors %}
@@ -9,10 +9,8 @@
                 {{ error }}<br>
             {% endfor %}
         {% endif %}
-        {{ form.submit }}
-    </form>
+    
     Town
-    <form action='' method='POST' title='Town'>
         {{ form.hidden_tag() }}
         {{ form.town }} <br>
         {% if form.town.errors %}
@@ -21,9 +19,7 @@
             {% endfor %}
         {% endif %}
         {{ form.submit }}
-    </form>
     Postcode
-    <form action='' method='POST' title='Postcode'>
         {{ form.hidden_tag() }}
         {{ form.postcode }} <br>
         {% if form.postcode.errors %}
