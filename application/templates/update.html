@@ -1,10 +1,27 @@
 {% extends 'layout.html' %}
 {% block body_content %}
     <form action='' method='POST'>
+    County
         {{ form.hidden_tag() }}
-        {{ form.wall }} <br>
-        {% if form.wall.errors %}
-            {% for error in form.wall.errors %}
+        {{ form.county }} <br>
+        {% if form.county.errors %}
+            {% for error in form.county.errors %}
+                {{ error }}<br>
+            {% endfor %}
+        {% endif %}
+    Town
+        {{ form.hidden_tag() }}
+        {{ form.town }} <br>
+        {% if form.town.errors %}
+            {% for error in form.town.errors %}
+                {{ error }}<br>
+            {% endfor %}
+        {% endif %}
+    Postcode
+        {{ form.hidden_tag() }}
+        {{ form.postcode }} <br>
+        {% if form.postcode.errors %}
+            {% for error in form.postcode.errors %}
                 {{ error }}<br>
             {% endfor %}
         {% endif %}
