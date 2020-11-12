@@ -19,5 +19,4 @@ def add():
         db.session.add(todo)
         db.session.commit()
         return redirect(url_for('index'))
-     form = WallForm()
     return render_template('add.html', title="New Location", form=form)   
