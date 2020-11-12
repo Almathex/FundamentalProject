@@ -5,11 +5,13 @@
     <title>Wall list</title>
 </head>
 <body>
-    <h1>Wall:</h1>
+    <h1>Wall</h1>
     <a href="{{ url_for('index') }}">Home for all your walls/locations/activities</a>
     <br>
     <br>
     <a href="{{ url_for('add') }}">Add a new location</a>
+    <br>
+    <a href="{{ url_for('add1') }}">Add a new activity</a>
     <br>
     {% block body_content %}
     {% endblock body_content %}
