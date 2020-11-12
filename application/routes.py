@@ -10,7 +10,7 @@ def index():
         "total locations": Locations.query.count(),
         "total_activities": Activities.query.count()
     }
-    return render_template('index.html', title="Wall App", locations=locations, activities=activities, form=form, totals=totals)
+    return render_template('index.html', title="Wall App", form=form, totals=totals)
 
 @app.route('/add', methods=['POST', 'GET'])
 def add():
