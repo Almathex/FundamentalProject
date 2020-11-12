@@ -20,8 +20,8 @@ class ActivityForm(FlaskForm):
     activity_name =  StringField('Activity:', validators = [DataRequired()])
     additional_equiptment = SelectField('Order With:',
         choices=[
-            (1, "Yes"),
-            (0, "No")]
+            ("True", "Yes"),
+            ("", "No")]
     )
     submit = SubmitField('Submit')
 

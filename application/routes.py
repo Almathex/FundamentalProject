@@ -32,7 +32,7 @@ def add1():
     if form.validate_on_submit():
         activity = Activities(
             activity_name = form.activity_name.data,
-            additional_equiptment = form.additional_equiptment.data
+            additional_equiptment = bool(form.additional_equiptment.data)
         )
         db.session.add(activity)
         db.session.commit()
