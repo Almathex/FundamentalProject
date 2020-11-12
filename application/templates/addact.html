@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 {% block body_content %}
-    Activity
     <form action='' method='POST' title='Activity'>
+        Activity
         {{ form.hidden_tag() }}
         {{ form.activity_name }} <br>
         {% if form.activity_name.errors %}
@@ -9,6 +9,7 @@
                 {{ error }}<br>
             {% endfor %}
         {% endif %}
+        Additional equiptment?
         {{ form.hidden_tag() }}
         {{ form.additional_equiptment }} <br>
         {% if form.additional_equiptment.errors %}
