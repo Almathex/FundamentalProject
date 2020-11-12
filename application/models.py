@@ -13,12 +13,12 @@ class Locations(db.Model):
     county = db.Column(db.String(50), nullable=False)
     town = db.Column(db.String(50), nullable=False)
     postcode = db.Column(db.String(10), nullable=False)
-    loctaions = db.relationship('Wall', backref = 'locations')
+    loctaions = db.relationship('Walls', backref = 'locations')
     
 class Activities(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     activity_name =  db.Column(db.String(50), unique=True)
     Additional_equiptment = db.Column(db.Boolean, nullable=False)
-    activities = db.relationship('Wall', backref = 'activities')
+    activities = db.relationship('Walls', backref = 'activities')
     
 
