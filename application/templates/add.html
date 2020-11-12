@@ -2,12 +2,33 @@
 {% block body_content %}
     <form action='' method='POST'>
         {{ form.hidden_tag() }}
-        {{ form.walls }} <br>
-        {% if form.walls.errors %}
-            {% for error in form.walls.errors %}
+        {{ form.county }} <br>
+        {% if form.county.errors %}
+            {% for error in form.county.errors %}
+                {{ error }}<br>
+            {% endfor %}
+        {% endif %}
+        {{ form.submit }}
+    </form>
+    <form action='' method='POST'>
+        {{ form.hidden_tag() }}
+        {{ form.town }} <br>
+        {% if form.town.errors %}
+            {% for error in form.town.errors %}
+                {{ error }}<br>
+            {% endfor %}
+        {% endif %}
+        {{ form.submit }}
+    </form>
+    <form action='' method='POST'>
+        {{ form.hidden_tag() }}
+        {{ form.postcode }} <br>
+        {% if form.postcode.errors %}
+            {% for error in form.postcode.errors %}
                 {{ error }}<br>
             {% endfor %}
         {% endif %}
         {{ form.submit }}
     </form>
 {% endblock body_content %}
+ 
