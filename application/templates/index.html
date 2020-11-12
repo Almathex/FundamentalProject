@@ -2,8 +2,8 @@
 {% block body_content %}
     <br>
     <br>
-    Want to find a Wall?
     <div>
+        LOCATIONS
         {% for location in locations %}
 
             {{ location.county }},
@@ -11,12 +11,14 @@
             {{ location.postcode }}
             <form action='{{ url_for('update', id=location.id) }}'>
                 <input type=submit value="Edit">
-                </form>
-                <form action='{{ url_for('delete', id=location.id) }}'>
+            </form>
+            <form action='{{ url_for('delete', id=location.id) }}'>
                 <input type=submit value="Remove">
-                </form>
-                <br>
+            </form>
+            <br>
         {% endfor %}
+        <br>
+        ACTIVITIES
         {% for activity in activities %}
 
             {{ activity.activity_name }},
