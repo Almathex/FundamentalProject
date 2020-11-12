@@ -18,7 +18,7 @@ class Locations(db.Model):
 class Activities(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     activity_name =  db.Column(db.String(50), unique=True)
-    Additional_equiptment = db.Column(db.Boolean, nullable=False)
+    additional_equiptment = db.Column(db.Boolean, nullable=False)
     activities = db.relationship('Walls', backref = 'activities')
     
 
