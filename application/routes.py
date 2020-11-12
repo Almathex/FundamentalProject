@@ -69,9 +69,16 @@ def updateact(id):
         form.additional_equiptment.data = activity.additional_equiptment
     return render_template('updateact.html', title='Edit your activity', form=form)    
 
-@app.route('/delete/<int:id>')
-def delete(id):
+@app.route('/delete/location/<int:id>')
+def deleteloc(id):
     location = Locations.query.get(id)
     db.session.delete(location)
     db.session.commit()
     return redirect(url_for('index'))
+
+@app.route('/delete/activity/<int:id>')
+def deleteact(id):
+    activity = Activities.query.get(id)
+    db.session.delete(activity)
+    db.session.commit()
+    return redirect(url_for('index'))    

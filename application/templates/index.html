@@ -13,7 +13,7 @@
             <form action='{{ url_for('updateloc', id=location.id) }}'>
                 <input type=submit value="Edit">
             </form>
-            <form action='{{ url_for('delete', id=location.id) }}'>
+            <form action='{{ url_for('deleteloc', id=location.id) }}'>
                 <input type=submit value="Remove">
             </form>
             <br>
@@ -28,7 +28,7 @@
             <form action='{{ url_for('updateact', id=activity.id) }}'>
                 <input type=submit value="Edit">
                 </form>
-                <form action='{{ url_for('delete', id=activity.id) }}'>
+                <form action='{{ url_for('deleteact', id=activity.id) }}'>
                 <input type=submit value="Remove">
                 </form>
                 <br>
