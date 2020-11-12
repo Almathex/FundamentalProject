@@ -7,10 +7,10 @@ from application.forms import LocationForm, OrderWall, ActivityForm
 def index():
     form = OrderWall()
     totals = {
-        "total locations": Locations.query.count(),
+        "total_locations": Locations.query.count(),
         "total_activities": Activities.query.count()
     }
-    return render_template('index.html', title="Wall App", form=form, totals=totals)
+    return render_template('index.html', title="Wall App", form=form, totals=totals, locations=Locations.query.all())
 
 @app.route('/add/location', methods=['POST', 'GET'])
 def add():
