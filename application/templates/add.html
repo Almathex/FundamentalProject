@@ -2,9 +2,9 @@
 {% block body_content %}
     <form action='' method='POST'>
         {{ form.hidden_tag() }}
-        {{ form.wall }} <br>
-        {% if form.wall.errors %}
-            {% for error in form.wall.errors %}
+        {{ form.walls }} <br>
+        {% if form.walls.errors %}
+            {% for error in form.walls.errors %}
                 {{ error }}<br>
             {% endfor %}
         {% endif %}
