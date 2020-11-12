@@ -20,3 +20,22 @@ def add():
         db.session.commit()
         return redirect(url_for('index'))
     return render_template('add.html', title="New Location", form=form)   
+
+@app.route('/update/<int:id>', methods=['GET', 'POST'])
+def update(id):
+    form = WallForm()
+    wall = Walls.query.get(id)
+    if form.validate_on_submit():
+        wall.size = form.size.data
+        db.session.commit()
+        redirect(url_for('index'))
+    elif request.method == 'GET':
+        form.size.data = wall.size
+    return render_template('update.html', title='Update your wall', form=form)
+
+@app.route('/delete/<int:id>')
+def delete(id):
+    wall = Walls.query.get(id)
+    db.session.delete(wall)
+    db.session.commit()
+    return redirect(url_for('index'))
