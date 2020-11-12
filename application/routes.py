@@ -61,7 +61,7 @@ def updateact(id):
     activity = Activities.query.get(id)
     if form.validate_on_submit():
         activity.activity_name = form.activity_name.data
-        activity.additional_equiptment = form.additional_equiptment.data
+        activity.additional_equiptment = bool(form.additional_equiptment.data)
         db.session.commit()
         redirect(url_for('index'))
     elif request.method == 'GET':
