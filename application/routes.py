@@ -5,12 +5,12 @@ from application.forms import LocationForm, OrderWall, ActivityForm
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
-    form = OrderTodo()
+    form = OrderWall()
     totals = {
         "total locations": Locations.query.count(),
         "total_activities": Activities.query.count()
     }
-    return render_template('index.html', title="Todo List App", locations=locations, activities=activities, form=form, totals=totals)
+    return render_template('index.html', title="Wall App", locations=locations, activities=activities, form=form, totals=totals)
 
 @app.route('/add', methods=['POST', 'GET'])
 def add():

@@ -19,7 +19,7 @@ class LocationForm(FlaskForm):
 class ActivityTodo(FlaskForm):
     activity_name =  StringField('Activity:', validators = [DataRequired()])
     Additional_equiptment = IntegerField('Equiptment required?:', validators = [DataRequired()])
-    submit = SubmitField('Order by')
+    submit = SubmitField('Submit')
 
     def validate_task(self, task):
         activities = Activities.query.all()
@@ -27,3 +27,13 @@ class ActivityTodo(FlaskForm):
             if activity.activity_name == activity_name.data:
                 raise ValidationError('This activity already exists!')
           
+class OrderWall(FlaskForm):
+    order_with = SelectField('Order With:',
+        choices=[
+            ("postcode", "Postcode"),
+            ("id", "Newest"),
+            ("old", "Oldest"),
+            ('activity_name', "activity")
+        ]
+    )
+    submit = SubmitField('Order by')          
