@@ -27,7 +27,7 @@ def add():
     return render_template('add.html', title="New Location", form=form) 
 
 @app.route('/add/activity', methods=['POST', 'GET'])
-def add():
+def add1():
     form = ActivityForm()
     if form.validate_on_submit():
         activity = Activities(
