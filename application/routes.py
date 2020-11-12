@@ -19,7 +19,7 @@ def add():
         location = Locations(
             county = form.county.data,
             town = form.town.data,
-            postcode = form.town.data
+            postcode = form.postcode.data
         )
         db.session.add(location)
         db.session.commit()
