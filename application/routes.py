@@ -1,41 +1,50 @@
 from flask import render_template, url_for, redirect, request
 from application import app, db
-from application.models import Wall, Location, Activity
-from application.forms import WallForm, OrderWall, ActivityForm
+from application.models import Walls, Locations, Activities
+from application.forms import WallForm, LocationForm, OrderWall, ActivityForm
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
-    wall = Wall()
-    return render_template('index.html', title="WHERE IS THE WALL", wall=wall)
+    form = OrderTodo()
+    totals = {
+        "total locations": Locations.query.count(),
+        "total_activities": Activities.query.count()
+    }
+    return render_template('index.html', title="Todo List App", locations=locations, activities=activities form=form, totals=totals)
 
 @app.route('/add', methods=['POST', 'GET'])
 def add():
-    form = WallForm()
+    form = LocationForm()
     if form.validate_on_submit():
-        walls = Walls(
-            wall = form.wall.data,
-            complete = False
+        location = Locations(
+            county = form.county.data,
+            town = form.town.data,
+            postcode = form.town.data
         )
-        db.session.add(walls)
+        db.session.add(location)
         db.session.commit()
         return redirect(url_for('index'))
-    return render_template('add.html', title="New Location", form=form)   
+    return render_template('add.html', title="New Location", form=form)    
 
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
 def update(id):
-    form = WallForm()
-    wall = Walls.query.get(id)
+    form = LocationForm()
+    location = Locations.query.get(id)
     if form.validate_on_submit():
-        wall.size = form.size.data
+        location.county = form.county.data
+        location.town = form.town.data
+        location.postcode = form.postcode.data
         db.session.commit()
         redirect(url_for('index'))
     elif request.method == 'GET':
-        form.size.data = wall.size
-    return render_template('update.html', title='Update your wall', form=form)
+        form.county.data = location.county
+        form.town.data = location.town
+        form.postcode.data = location.postcode
+    return render_template('update.html', title='Edit your location', form=form)
 
 @app.route('/delete/<int:id>')
 def delete(id):
-    wall = Walls.query.get(id)
-    db.session.delete(wall)
+    location = Locations.query.get(id)
+    db.session.delete(location)
     db.session.commit()
     return redirect(url_for('index'))
