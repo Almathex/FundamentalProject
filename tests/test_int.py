@@ -54,7 +54,7 @@ class TestAdd(TestBase):
         test_postcode='CH1 2AB'
         
         # Fill in registration form
-        self.driver.find_element_by_xpath('//*[@id="wall"]').send_keys(test_wall_name)
+        self.driver.find_element_by_xpath('//*[@id="wall_name"]').send_keys(test_wall_name)
         self.driver.find_element_by_xpath('//*[@id="county"]').send_keys(
             test_county)
         self.driver.find_element_by_xpath('//*[@id="town"]').send_keys(
