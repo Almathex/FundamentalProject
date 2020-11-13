@@ -9,13 +9,13 @@
             <b>{{location.wall_name}}</b>,
             {{ location.town }},
             {{ location.postcode }}
-            <form action='{{ url_for('updateloc', id=location.id) }}'>
+            <form action='{{ url_for('updateloc', idnum=location.id) }}'>
                 <input type=submit value="Edit">
             </form>
-            <form action='{{ url_for('deleteloc', id=location.id) }}'>
+            <form action='{{ url_for('deleteloc', idnum=location.id) }}'>
                 <input type=submit value="Remove">
             </form>
-            <form action='{{ url_for('viewactivity', id=location.id) }}'>
+            <form action='{{ url_for('viewactivity', idnum=location.id) }}'>
             <input type=submit value="View activities">
             </form>
             <form action='{{ url_for('add1', idnum=location.id) }}'>
@@ -30,10 +30,10 @@
 
             {{ activity.activity_name }},
             {{ activity.additional_equiptment }}
-            <form action='{{ url_for('updateact', id=activity.id) }}'>
+            <form action='{{ url_for('updateact', idnum=activity.id) }}'>
                 <input type=submit value="Edit">
                 </form>
-                <form action='{{ url_for('deleteact', id=activity.id) }}'>
+                <form action='{{ url_for('deleteact', idnum=activity.id) }}'>
                 <input type=submit value="Remove">
                 </form>
                 <br>

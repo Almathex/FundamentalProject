@@ -40,10 +40,10 @@ def add1(idnum):
         return redirect(url_for('index'))
     return render_template('addactivity.html', title="New Activity", form=form, locations=Locations.query.get(idnum))       
 
-@app.route('/update/location/<int:id>', methods=['GET', 'POST'])
-def updateloc(id):
+@app.route('/update/location/<idnum>', methods=['GET', 'POST'])
+def updateloc(idnum):
     form = LocationForm()
-    location = Locations.query.get(id)
+    location = Locations.query.get(idnum)
     if form.validate_on_submit():
         location.county = form.county.data
         location.town = form.town.data
@@ -57,10 +57,10 @@ def updateloc(id):
     return render_template('update.html', title='Edit your location', form=form)
 
 
-@app.route('/update/activity/<int:id>', methods=['GET', 'POST'])
-def updateact(id):
+@app.route('/update/activity/<idnum>', methods=['GET', 'POST'])
+def updateact(idnum):
     form = ActivityForm()
-    activity = Activities.query.get(id)
+    activity = Activities.query.get(idnum)
     if form.validate_on_submit():
         activity.activity_name = form.activity_name.data
         activity.additional_equiptment = bool(form.additional_equiptment.data)
@@ -76,16 +76,16 @@ def viewactivity(idnum):
 
     return render_template('viewactivity.html', activities = Activities.query.filter_by(wall_id=idnum).all(), location = Locations.query.get(idnum))    
 
-@app.route('/delete/location/<int:id>')
-def deleteloc(id):
-    location = Locations.query.get(id)
+@app.route('/delete/location/<idnum>')
+def deleteloc(idnum):
+    location = Locations.query.get(idnum)
     db.session.delete(location)
     db.session.commit()
     return redirect(url_for('index'))
 
-@app.route('/delete/activity/<int:id>')
-def deleteact(id):
-    activity = Activities.query.get(id)
+@app.route('/delete/activity/<idnum>')
+def deleteact(idnum):
+    activity = Activities.query.get(idnum)
     db.session.delete(activity)
     db.session.commit()
     return redirect(url_for('index'))    
