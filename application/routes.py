@@ -26,19 +26,19 @@ def add():
         return redirect(url_for('index'))
     return render_template('addwall.html', title="New Wall", form=form) 
 
-@app.route('/add/activity/<id>', methods=['POST', 'GET'])
-def add1(id):
+@app.route('/add/activity/<idnum>', methods=['POST', 'GET'])
+def add1(idnum):
     form = ActivityForm()
     if form.validate_on_submit():
         activity = Activities(
-            wall_id = id
-            activity_name = form.activity_name.data,
-            additional_equiptment = bool(form.additional_equiptment.data)
+        wall_id = idnum,
+        activity_name = form.activity_name.data,
+        additional_equiptment = bool(form.additional_equiptment.data)
         )
         db.session.add(activity)
         db.session.commit()
         return redirect(url_for('index'))
-    return render_template('addactivity.html', title="New Activity", form=form, locations=Locations.query.get(id))       
+    return render_template('addactivity.html', title="New Activity", form=form, locations=Locations.query.get(idnum))       
 
 @app.route('/update/location/<int:id>', methods=['GET', 'POST'])
 def updateloc(id):
