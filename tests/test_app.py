@@ -22,3 +22,36 @@ class TestBase(TestCase):
     def tearDown(self):
         db.activities.remove()
         db.drop_all()
+
+class TestViews(TestBase):
+    def text_index_get(self):
+        reponse = self.client.get(url_for('index'))
+        self.assertEqual(response.status_code,200)
+
+    def test_add_get(self):
+        response = self.client.get(url_for('add'))  
+        self.assertEqual(response.status_code,200)
+
+    def test_add1_get(self):
+        response = self.client.get(url_for('add1'), idnum=1)  
+        self.assertEqual(response.status_code,200)   
+
+    def test_updateloc_get(self):
+        repsonse = self.client.get(url_for("updateloc", idnum=1))
+        self.assertEqual(response.status_code,200)
+
+    def test_updateac_get(self):
+        repsonse = self.client.get(url_for("updateact", idnum=1))
+        self.assertEqual(response.status_code,200)
+
+    def test_viewactivity_get(self):
+        repsonse = self.client.get(url_for("viewactivity", idnum=1))
+        self.assertEqual(response.status_code,200)
+
+    def test_deleteloc_get(self):
+        repsonse = self.client.get(url_for("deleteloc", idnum=1))
+        self.assertEqual(response.status_code,302)
+
+    def test_deleteact_get(self):
+        repsonse = self.client.get(url_for("deleteact", idnum=1))
+        self.assertEqual(response.status_code,302)    
