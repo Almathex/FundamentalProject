@@ -2,6 +2,14 @@
 {% block body_content %}
     
     <form action='' method='POST' >
+    Wall name
+        {{ form.hidden_tag() }}
+        {{ form.wall_name }} <br>
+        {% if form.wall_name.errors %}
+            {% for error in form.wall_name.errors %}
+                {{ error }}<br>
+            {% endfor %}
+        {% endif %}    
     County
         {{ form.hidden_tag() }}
         {{ form.county }} <br>
