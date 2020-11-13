@@ -69,7 +69,7 @@ def updateact(idnum):
     elif request.method == 'GET':
         form.activity_name.data = activity.activity_name
         form.additional_equiptment.data = activity.additional_equiptment
-    return render_template('updateact.html', title='Edit your activity', form=form)    
+    return render_template('updateactivity.html', title='Edit your activity', form=form)    
 
 @app.route('/view/<idnum>', methods=['POST', 'GET'])
 def viewactivity(idnum):
