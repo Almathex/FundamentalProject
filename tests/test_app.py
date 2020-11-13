@@ -6,7 +6,7 @@ from application.models import Locations, Activities
 
 class TestBase(TestCase):
     def create_app(self):
-        app.config.update(SQLALCHEMY_DATABASE_URI="sqlite:///data.db",
+        app.config.update(SQLALCHEMY_DATABASE_URI="sqlite:///",
         SECRET_KEY='TEST_SECRET_KEY',
         DEBUG=True)
         return app
