@@ -6,7 +6,7 @@
         <u>Walls:</u>
         <br>
         {% for location in locations %}
-            <b>{{loction.wall_name}}</b>,
+            <b>{{location.wall_name}}</b>,
             {{ location.town }},
             {{ location.postcode }}
             <form action='{{ url_for('updateloc', id=location.id) }}'>
