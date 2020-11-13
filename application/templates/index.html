@@ -3,11 +3,10 @@
     <br>
     <br>
     <div>
-        <u>LOCATIONS:</u>
+        <u>Walls:</u>
         <br>
         {% for location in locations %}
-
-            {{ location.county }},
+            <b>{{loction.wall_name}}</b>,
             {{ location.town }},
             {{ location.postcode }}
             <form action='{{ url_for('updateloc', id=location.id) }}'>
@@ -15,6 +14,12 @@
             </form>
             <form action='{{ url_for('deleteloc', id=location.id) }}'>
                 <input type=submit value="Remove">
+            </form>
+            <form action='{{ url_for('viewactivity', idNum=location.id) }}'>
+            <input type=submit value="View activities">
+            </form>
+            <form action='{{ url_for('add1', idNum=location.id) }}'>
+            <input type=submit value="Add activity">
             </form>
             <br>
         {% endfor %}

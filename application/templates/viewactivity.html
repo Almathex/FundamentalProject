@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block body %}
+<p><h2> {{ locations.wall_name }} &nbsp; {{ locations.postcode }} </h2></p>
+<br>
+{% for locations in location %}
+<p>Activity: {{ activities.activity_name }} &nbsp; Additional equiptment required? {{ activities.additional_equiptment}}
+<form action='{{ url_for('deleteact', idNum=activites.id) }}'>
+<input type=submit value="Delete">
+</form>
+<form action='{{ url_for('updateactivity', idNum=activites.id) }}'>
+<input type=submit value="Update Activity">
+</form>
+
+</p>
+{% endfor %}
+{% endblock body %}
