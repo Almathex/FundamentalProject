@@ -81,6 +81,11 @@ def viewactivity(idnum):
 @app.route('/delete/location/<idnum>')
 def deleteloc(idnum):
     location = Locations.query.get(idnum)
+    activity = Activities.query.filter_by(wall_id=idnum).all()
+    for count in activity:
+        activity1 = Activities.query.filter_by(wall_id=idNum).first()
+        db.session.delete(activity1)
+        db.session.commit()
     db.session.delete(location)
     db.session.commit()
     return redirect(url_for('index'))
