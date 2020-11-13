@@ -20,7 +20,7 @@ def add():
             wall_name = form.wall_name.data,
             county = form.county.data,
             town = form.town.data,
-            postcode = form.postcode.data)
+            postcode = form.postcode.data )
         db.session.add(location)
         db.session.commit()
         return redirect(url_for('index'))

@@ -15,7 +15,7 @@ class LocationForm(FlaskForm):
     def validate_task(self, task):
         locations = Locations.query.all()
         for location in locations:
-            if location.postcode == postcode.data 
+            if location.postcode == postcode.data: 
                 raise ValidationError('This postcode already exists!')
             elif location.wall_name == wall_name.data:
                 raise ValidationError('This wall already exists!')
