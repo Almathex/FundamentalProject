@@ -15,9 +15,9 @@ class TestBase(TestCase):
         db.create_all()
         location = Locations(wall_name='The big one', county='Cheshire', town='Chester', postcode='CH1 4HX')
         activity1 = Activities(wall_id=1, activity_name='Rock Climbing', additional_equiptment=1)
-        db.activities.add(location)
-        db.activities.add(activity1)
-        db.activities.commit()
+        db.session.add(location)
+        db.session.add(activity1)
+        db.session.commit()
 
     def tearDown(self):
         db.activities.remove()
