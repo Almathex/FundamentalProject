@@ -83,7 +83,7 @@ def deleteloc(idnum):
     location = Locations.query.get(idnum)
     activity = Activities.query.filter_by(wall_id=idnum).all()
     for count in activity:
-        activity1 = Activities.query.filter_by(wall_id=idNum).first()
+        activity1 = Activities.query.filter_by(wall_id=idnum).first()
         db.session.delete(activity1)
         db.session.commit()
     db.session.delete(location)
