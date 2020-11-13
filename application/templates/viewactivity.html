@@ -1,5 +1,5 @@
 {% extends 'layout.html' %}
-{% block body %}
+{% block body_content %}
 <p><h2> {{ locations.wall_name }} &nbsp; {{ locations.postcode }} </h2></p>
 <br>
 {% for locations in location %}
@@ -13,4 +13,4 @@
 
 </p>
 {% endfor %}
-{% endblock body %}
+{% endblock body_content %}
