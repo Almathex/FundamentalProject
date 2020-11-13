@@ -74,7 +74,7 @@ def updateact(idnum):
 @app.route('/view/<idnum>', methods=['POST', 'GET'])
 def viewactivity(idnum):
 
-    return render_template('viewactivity.html', activities = Activities.query.filter_by(wall_id=idnum).all(), location = Locations.query.get(idnum))    
+    return render_template('viewactivity.html', activities = Activities.query.filter_by(wall_id=idnum).all(), locations = Locations.query.get(idnum))    
 
 @app.route('/delete/location/<idnum>')
 def deleteloc(idnum):
