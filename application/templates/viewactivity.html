@@ -2,7 +2,7 @@
 {% block body_content %}
 <p><h2> {{ locations.wall_name }} &nbsp; {{ locations.postcode }} </h2></p>
 <br>
-{% for locations in location %}
+{% for activities in activity %}
 <p>Activity: {{ activities.activity_name }} &nbsp; Additional equiptment required? {{ activities.additional_equiptment}}
 <form action='{{ url_for('deleteact', idnum=activites.id) }}'>
 <input type=submit value="Delete">
