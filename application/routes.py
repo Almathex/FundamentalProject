@@ -45,12 +45,14 @@ def updateloc(idnum):
     form = LocationForm()
     location = Locations.query.get(idnum)
     if form.validate_on_submit():
+        location.wall_name = form.wall_name.data
         location.county = form.county.data
         location.town = form.town.data
         location.postcode = form.postcode.data
         db.session.commit()
         return redirect(url_for('index'))
     elif request.method == 'GET':
+        form.wall_name.data = location.wall_name
         form.county.data = location.county
         form.town.data = location.town
         form.postcode.data = location.postcode
