@@ -15,11 +15,11 @@
             <form action='{{ url_for('deleteloc', idnum=location.id) }}'>
                 <input type=submit value="Remove">
             </form>
-            <form action='{{ url_for('viewactivity', idnum=location.id) }}'>
-            <input type=submit value="View activities">
-            </form>
             <form action='{{ url_for('add1', idnum=location.id) }}'>
             <input type=submit value="Add activity">
+            </form>
+            <form action='{{ url_for('viewactivity', idnum=location.id) }}'>
+            <input type=submit value="View activities">
             </form>
             <br>
         {% endfor %}
