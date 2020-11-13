@@ -17,6 +17,7 @@ def add():
     form = LocationForm()
     if form.validate_on_submit():
         location = Locations(
+            wall_name = form.wall_name.data,
             county = form.county.data,
             town = form.town.data,
             postcode = form.postcode.data
@@ -24,7 +25,7 @@ def add():
         db.session.add(location)
         db.session.commit()
         return redirect(url_for('index'))
-    return render_template('add.html', title="New Location", form=form) 
+    return render_template('add.html', title="New Wall", form=form) 
 
 @app.route('/add/activity', methods=['POST', 'GET'])
 def add1():

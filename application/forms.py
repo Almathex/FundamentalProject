@@ -5,16 +5,20 @@ from wtforms.validators import DataRequired, ValidationError
 from application.models import Walls, Locations, Activities
 
 class LocationForm(FlaskForm):
+    wall_name = StringField('Wall name:', validators = [DataRequired()])
     county = StringField('County:', validators = [DataRequired()])
     town = StringField('Town:', validators = [DataRequired()])
     postcode = StringField('Postcode:', validators = [DataRequired()])
     submit = SubmitField('Submit')
 
+
     def validate_task(self, task):
         locations = Locations.query.all()
         for location in locations:
-            if location.postcode == postcode.data:
+            if location.postcode == postcode.data 
                 raise ValidationError('This postcode already exists!')
+            elif location.wall_name == wall_name.data:
+                raise ValidationError('This wall already exists!')
 
 class ActivityForm(FlaskForm):
     activity_name =  StringField('Activity:', validators = [DataRequired()])
