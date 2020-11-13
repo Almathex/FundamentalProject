@@ -54,7 +54,7 @@ def updateloc(idnum):
         form.county.data = location.county
         form.town.data = location.town
         form.postcode.data = location.postcode
-    return render_template('update.html', title='Edit your location', form=form)
+    return render_template('updatewall.html', title='Edit your wall', form=form)
 
 
 @app.route('/update/activity/<idnum>', methods=['GET', 'POST'])
