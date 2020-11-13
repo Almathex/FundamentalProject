@@ -10,16 +10,16 @@ class Walls(db.Model):
 
 class Locations(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    activity_id = db.Column(db.Integer, db.ForeignKey('activities.id'), nullable =False)
     wall_name = db.Column(db.String(50), nullable=False)
     county = db.Column(db.String(50), nullable=False)
     town = db.Column(db.String(50), nullable=False)
     postcode = db.Column(db.String(10), nullable=False)
+    walls = db.relationship('Activities, backref = 'locations')
     
 class Activities(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     activity_name =  db.Column(db.String(50), unique=True)
     additional_equiptment = db.Column(db.Boolean, nullable=False)
-    activities = db.relationship('Locations', backref = 'activities')
+    wall_id = db.Column(db.Integer, db.ForeignKey('locations.id'), nullable =False)
     
 
