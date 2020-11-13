@@ -37,7 +37,7 @@ def add1():
         db.session.add(activity)
         db.session.commit()
         return redirect(url_for('index'))
-    return render_template('addact.html', title="New Activity", form=form)       
+    return render_template('addactivity.html', title="New Activity", form=form)       
 
 @app.route('/update/location/<int:id>', methods=['GET', 'POST'])
 def updateloc(id):
