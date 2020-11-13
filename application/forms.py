@@ -12,7 +12,7 @@ class LocationForm(FlaskForm):
     submit = SubmitField('Submit')
 
 
-    def validate_task(self, task):
+    def validate_task(self, location):
         locations = Locations.query.all()
         for location in locations:
             if location.postcode == postcode.data: 
@@ -29,7 +29,7 @@ class ActivityForm(FlaskForm):
     )
     submit = SubmitField('Submit')
 
-    def validate_task(self, task):
+    def validate_task(self, activities):
         activities = Activities.query.all()
         for activity in activities:
             if activity.activity_name == activity_name.data:
