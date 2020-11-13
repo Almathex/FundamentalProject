@@ -4,10 +4,10 @@
 <br>
 {% for activity in activities %}
 <p>Activity: {{ activity.activity_name }} &nbsp; Additional equiptment required? {{ activity.additional_equiptment}}
-<form action='{{ url_for('deleteact', idnum=activites.id) }}'>
+<form action='{{ url_for('deleteact', idnum=activities.id) }}'>
 <input type=submit value="Delete">
 </form>
-<form action='{{ url_for('updateactivity', idnum=activites.id) }}'>
+<form action='{{ url_for('updateactivity', idnum=activities.id) }}'>
 <input type=submit value="Update Activity">
 </form>
 
