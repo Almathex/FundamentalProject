@@ -14,7 +14,7 @@ class Locations(db.Model):
     county = db.Column(db.String(50), nullable=False)
     town = db.Column(db.String(50), nullable=False)
     postcode = db.Column(db.String(10), nullable=False)
-    walls = db.relationship('Activities, backref='locations')
+    walls = db.relationship('Activities', backref='locations')
     
 class Activities(db.Model):
     id = db.Column(db.Integer, primary_key=True)
