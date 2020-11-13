@@ -71,10 +71,10 @@ def updateact(id):
         form.additional_equiptment.data = activity.additional_equiptment
     return render_template('updateact.html', title='Edit your activity', form=form)    
 
-@app.route('/view/<id>', methods=['POST', 'GET'])
-def viewactivity(id):
+@app.route('/view/<idnum>', methods=['POST', 'GET'])
+def viewactivity(idnum):
 
-    return render_template('viewactivity.html', activities = Activities.query.filter_by(wall_id=id).all(), location = Locations.query.get(id))    
+    return render_template('viewactivity.html', activities = Activities.query.filter_by(wall_id=idnum).all(), location = Locations.query.get(idnum))    
 
 @app.route('/delete/location/<int:id>')
 def deleteloc(id):
