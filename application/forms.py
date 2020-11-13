@@ -12,13 +12,6 @@ class LocationForm(FlaskForm):
     submit = SubmitField('Submit')
 
 
-    def validate_task(self, location):
-        locations = Locations.query.all()
-        for location in locations:
-            if location.postcode == postcode.data: 
-                raise ValidationError('This postcode already exists!')
-            elif location.wall_name == wall_name.data:
-                raise ValidationError('This wall already exists!')
 
 class ActivityForm(FlaskForm):
     activity_name =  StringField('Activity:', validators = [DataRequired()])
@@ -29,11 +22,6 @@ class ActivityForm(FlaskForm):
     )
     submit = SubmitField('Submit')
 
-    def validate_task(self, activities):
-        activities = Activities.query.all()
-        for activity in activities:
-            if activity.activity_name == activity_name.data:
-                raise ValidationError('This activity already exists!')
           
 class OrderWall(FlaskForm):
     order_with = SelectField('Order With:',
