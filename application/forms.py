@@ -26,8 +26,8 @@ class ActivityForm(FlaskForm):
 class OrderWall(FlaskForm):
     order_with = SelectField('Order With:',
         choices=[
-            ("postcode", "Postcode"),
-            ("id", "Newest"),
+            ("wall_name", "Name"),
+            ("id", "Most Recent"),
             ("old", "Oldest"),
             ('activity_name', "activity")
         ]

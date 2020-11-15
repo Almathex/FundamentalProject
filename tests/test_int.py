@@ -41,11 +41,8 @@ class TestBase(LiveServerTestCase):
 class TestAdd(TestBase):
 
     def test_add(self):
-        """
-        Test that a user can add a game if all the field are correctly filled out
-        """
-
-        # Click register menu link
+        
+        
         self.driver.find_element_by_xpath("/html/body/a[2]").click()
         time.sleep(1)
         test_wall_name='The big one'
@@ -53,7 +50,7 @@ class TestAdd(TestBase):
         test_town='Chester'
         test_postcode='CH1 2AB'
         
-        # Fill in registration form
+        
         self.driver.find_element_by_xpath('//*[@id="wall_name"]').send_keys(test_wall_name)
         self.driver.find_element_by_xpath('//*[@id="county"]').send_keys(
             test_county)
@@ -65,7 +62,6 @@ class TestAdd(TestBase):
         time.sleep(1)
         
 
-        # Assert that browser redirects to index page
         assert url_for('index') in self.driver.current_url
 
 if __name__ == '__main__':
