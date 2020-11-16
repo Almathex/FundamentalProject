@@ -48,15 +48,15 @@ Due to time constraints and to make life easier I chose to revert back to a two 
 # Risk Assessment
 ![Risk Assessment](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/Risk.png?raw=True)
 
-# Testing 
-Here I have run 'pytest --cov ./application/ --cov-report teerm-missing which performed 7 unit tests and 3 integrated tests 
-![testing1](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/test.PNG?raw=True)
-And here are the results: 82% Coverage
-![Testing](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/pytest.PNG?raw=True)
-
 # Jenkins Build Tools
 These are the instructions i gave jenkins when building the app.
 ![jenkinsBuild](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/Inkedjenkinsbuildtool_LI.jpg?raw=True)
+
+# Testing 
+Here I have run 'pytest --cov ./application/ --cov-report teerm-missing once the application was live, which performed 7 unit tests and 3 integrated tests 
+![testing1](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/test.PNG?raw=True)
+And here are the results: 82% Coverage
+![Testing](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/pytest.PNG?raw=True)
 
 # Demo
 Here is the home page for the app
