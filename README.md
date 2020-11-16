@@ -83,6 +83,9 @@ This is editing the activity post
 This is the updated activity
 ![Demo7](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/demo9.PNG?raw=True)
 
+Here is the change in effect in SQL
+![sqlchange](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/activiy.PNG?raw=True)
+
 This is the home page after removing the wall post, which in turn removes the activities assosiated with that post.
 ![Demo8](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/demo10.PNG?raw=True)
 
