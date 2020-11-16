@@ -28,7 +28,7 @@ I decided to make an application that lets you jot down a wall and add/see what 
 -Delete any posts
 
 # Summary
-I first made VM and MYSQL on GCP and a Github repository. I then cloned the repository down into VSC (Visual Studio Code) and my VM and pushed and pulled to get work between the computers. I did pip3 install -r requirements.txt to install all the extras (including Flask and Selenium) and then created the python and html files needed for the application, i knew what files i would need by checking my trello board to see what work there was to be done. I allowed the application to access the MYSQL database, and set up Jenkins on the VM. I then linked my repository to Jenkins and input the build tools and build the app using the VM's IP. I then did unit testing and integrated testing (using Selenium) using pytest --cov ./application/ --cov-report term-missing.
+I first made VM and MYSQL on GCP and a Github repository. I then cloned the repository down into VSC (Visual Studio Code) and my VM and pushed and pulled to get work between the computers. I did pip3 install -r requirements.txt to install all the extras (including Flask and Selenium) and then created the python and html files needed for the application, i knew what files i would need by checking my trello board to see what work there was to be done. I allowed the application to access the MYSQL database, and installed Jenkins on the VM. I then linked my repository to Jenkins and input the build tools and build the app using the VM's IP. I then did unit testing and integrated testing (using Selenium) using pytest --cov ./application/ --cov-report term-missing.
 
 # CI Pipeline
 Here is the CI Pipeline i used:
