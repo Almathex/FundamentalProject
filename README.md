@@ -31,8 +31,11 @@ I decided to make an application that lets you jot down a wall and add/see what 
 Here is the CI Pipeline i used:
 ![CIpipe](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/CIpipe.png?raw=True)
 
-# Initial ERD  
-![Initial ERD](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/WallFinder-ERD-2.png?raw=True)
+# Initial ERD 
+![Initial ERD](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/WallFinder-ERD.png?raw=True)
+
+# 2nd ERD
+![2nd ERD](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/WallFinder-ERD-2.png?raw=True)
 
 # Final ERD  
 ![Final ERD](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/Updated%20ERD.png?raw=True)
