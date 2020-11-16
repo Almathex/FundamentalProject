@@ -56,7 +56,7 @@ These are the instructions i gave jenkins when building the app.
 ![jenkinsBuild](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/Inkedjenkinsbuildtool_LI.jpg?raw=True)
 
 # Testing 
-Here I have run 'pytest --cov ./application/ --cov-report term-missing' once the application was live, which performed 7 unit tests and 3 integrated tests 
+Here I have run 'pytest --cov ./application/ --cov-report term-missing' once the application was live, which performed 7 unit tests and 3 integrated tests.The unit tests check that the individual components work, while the integrated tests check that the individual components work together
 ![testing1](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/test.PNG?raw=True)
 And here are the results: 82% Coverage
 ![Testing](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/pytest.PNG?raw=True)
