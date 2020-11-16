@@ -61,20 +61,28 @@ These are the instructions i gave jenkins when building the app.
 # Demo
 Here is the home page for the app
 ![Demo1](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/demo1.PNG?raw=True)
+
 This is a the add a wall page
 ![Demo2](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/demo3.PNG?raw=True)
+
 This is the home page with a view of all added walls
 ![Demo3](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/demo4.PNG?raw=True)
+
 This a view of the add activity page, which can be accessed from the wall post
 ![Demo4](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/demo6.PNG?raw=True)
+
 This is a view of the activities available for this wall post
 ![Demo5](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/demo7.PNG?raw=True)
+
 This is the SQL tables showing the working relationship between walls (location) and activities.
 ![Relaionship](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/relationship.png?raw=True)
+
 This is editing the activity post
 ![Demo6](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/demo8.PNG?raw=True)
+
 This is the updated activity
 ![Demo7](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/demo9.PNG?raw=True)
+
 This is the home page after removing the wall post, which in turn removes the activities assosiated with that post.
 ![Demo8](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/demo10.PNG?raw=True)
 
