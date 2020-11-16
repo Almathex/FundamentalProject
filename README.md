@@ -27,6 +27,10 @@ I decided to make an application that lets you jot down a wall and add/see what 
 
 -Delete any posts
 
+# CI Pipeline
+Here is the CI Pipeline i used:
+![CIpipe](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/CIpipe.png?raw=True)
+
 # Initial ERD  
 ![Initial ERD](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/WallFinder-ERD-2.png?raw=True)
 
@@ -40,14 +44,15 @@ Due to time constraints and to make life easier I chose to revert back to a two 
 
 # Risk Assessment
 ![Risk Assessment](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/Risk.png?raw=True)
-This is 
+
 # Testing 
 Here I have run 'pytest --cov ./application/ --cov-report teerm-missing which performed 7 unit tests and 3 integrated tests 
 ![testing1](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/test.PNG?raw=True)
+And here are the results: 82% Coverage
 ![Testing](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/pytest.PNG?raw=True)
 
-These are the instructions i gave jenkins when building the app.
 # Jenkins Build Tools
+These are the instructions i gave jenkins when building the app.
 ![jenkinsBuild](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/Inkedjenkinsbuildtool_LI.jpg?raw=True)
 
 # Demo
@@ -70,6 +75,7 @@ This is the updated activity
 This is the home page after removing the wall post, which in turn removes the activities assosiated with that post.
 ![Demo8](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/demo10.PNG?raw=True)
 
-
+# Room for improvements
+There are numerous thing I could have impliemented to make the app more functional, the main thing for me would be making sure there couldnt be any duplicate posts in either of the wall or activity forms, which at the moment the application allows.
 
 
