@@ -2,7 +2,9 @@
 This is the first repo regarding my QA fundamental project
 
 Website: http://35.246.21.143:5000/
+
 Trello: https://trello.com/b/qkV41XqE/devops-fundamental-project
+
 Risk Assessment: https://docs.google.com/spreadsheets/d/1KDOYPHiO6hBObNmLxmTj6owbHyyz476xQ-NGfvWHOrs/edit?usp=sharing
 
 # Objective
@@ -38,9 +40,15 @@ Due to time constraints and to make life easier I chose to revert back to a two 
 
 # Risk Assessment
 ![Risk Assessment](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/Risk.png?raw=True)
-
+This is 
 # Testing 
+Here I have run 'pytest --cov ./application/ --cov-report teerm-missing which performed 7 unit tests and 3 integrated tests 
+![testing1](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/test.PNG?raw=True)
 ![Testing](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/pytest.PNG?raw=True)
+
+These are the instructions i gave jenkins when building the app.
+# Jenkins Build Tools
+![jenkinsBuild](https://github.com/Almathex/FundamentalProject/blob/main/Documentation/Inkedjenkinsbuildtool_LI.jpg?raw=True)
 
 # Demo
 Here is the home page for the app
